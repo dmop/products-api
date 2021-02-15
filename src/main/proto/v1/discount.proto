@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package product.v1;
+
+option java_outer_classname = "DiscountProto";
+option java_package = "com.product.v1";
+option java_multiple_files = true;
+
+message Discount {
+  float percentage = 1;
+  int64 value_in_cents = 2;
+}

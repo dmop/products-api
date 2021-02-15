@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  discounts_mongo:
+    container_name: discounts_mongo
+    image: bitnami/mongodb:4.2
+    environment:
+      - MONGODB_ADVERTISED_HOSTNAME=discounts_mongo
+      - MONGODB_REPLICA_SET_MODE=primary
+      - MONGODB_ROOT_PASSWORD=root
+      - MONGODB_REPLICA_SET_KEY=replicakey
+    ports:
+      - 27017:27017
+    volumes:
+      - "./data/discounts_mongo:/bitnami"
+networks:
+  default:
+    name: discounts

@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package product.v1;
+
+option java_outer_classname = "ProductAPIProto";
+option java_package = "com.product.v1";
+option java_multiple_files = true;
+
+import "v1/product.proto";
+
+service ProductAPI {
+  rpc GetOne(GetOneProductRequest) returns (GetOneProductResponse);
+
+  rpc Create(CreateProductRequest) returns (CreateProductResponse);
+
+  rpc Update(UpdateProductRequest) returns (UpdateProductResponse);
+
+  rpc Delete(DeleteProductRequest) returns (DeleteProductResponse);
+}
+
+message GetOneProductRequest {
+  string productId = 1;
+}
+
+message GetOneProductResponse {
+  Product product = 1;
+}
+
+message CreateProductRequest {
+  Product product = 1;
+}
+
+message CreateProductResponse {
+  Product product = 1;
+}
+
+message UpdateProductRequest {
+  Product product = 1;
+}
+
+message UpdateProductResponse {
+  Product product = 1;
+}
+
+message DeleteProductRequest {
+  string productId = 1;
+}
+
+message DeleteProductResponse {
+  string message = 1;
+}

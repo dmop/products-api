@@ -1,0 +1,19 @@
+micronaut:
+  application:
+    name: discounts
+mongodbconfig:
+  user: "root"
+  password: "root"
+  endpoint: "localhost:27017"
+mongodb:
+  servers:
+    discounts:
+      uri: "mongodb://${mongodbconfig.user}:${mongodbconfig.password}@${mongodbconfig.endpoint}/"
+      connection-pool:
+        max-connection-idle-time: "60s"
+        max-wait-time: "30s"
+        max-connection-life-time: "120s"
+      collections:
+        product:
+          database: "dev-discounts"
+          collection: "product"

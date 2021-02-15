@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package product.v1;
+
+option go_package = "discountsv1";
+option java_outer_classname = "ProductProto";
+option java_package = "com.product.v1";
+option java_multiple_files = true;
+
+import "v1/discount.proto";
+
+message Product {
+  string id = 1;
+  int64 price_in_cents = 2;
+  string title = 3;
+  string description = 4;
+  Discount discount = 5;
+}
